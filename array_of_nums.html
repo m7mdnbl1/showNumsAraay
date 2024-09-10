@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Prompt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 10px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result{
+            color: red;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Enter Array of Numbers</h1>
+    <button onclick="promptForArray()">Enter Array</button>
+
+    <p id="result"></p>
+
+    <script>
+        function promptForArray() {
+            var input = prompt("Enter array values separated by commas: e.g.,2,6,9,3,4"); // Display a prompt to get input from the user
+            if (input !== null) { // Check that the user didn't cancel the prompt
+            var numbers = input.split(',').map(Number); // Convert the input string to an array of numbers
+                document.getElementById('result').textContent = `You entered: ${numbers.join(', ')}`; // Display the entered numbers
+            }
+        }
+    </script>
+
+</body>
+</html>
